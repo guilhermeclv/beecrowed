@@ -67,12 +67,7 @@ fn teste_de_selecao(a:i32, b:i32, c:i32, d:i32)
     else {
         println!("Valores não aceitos");
     };
-    if (b > c && d > a) && (c+ d> a + b) && (c >0 && d > 0) && (a % 2==0) {
-        println!("Valores Aceitos");
-    }
-    else {
-        println!("Valores não aceitos");
-    };
+
 }
 //1007
 fn diferenca(a:i32, b:i32, c:i32, d:i32)->i32
