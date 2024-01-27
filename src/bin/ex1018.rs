@@ -1,7 +1,7 @@
 fn main() {
 let valor_reais =cedulas(11257);
-println!("Quantidade Notas de 100: {} Quantidades Notas de 50: {} Quantidades Notas de 20: {} Quantidades Notas de 10: {}
-Quantidades Notas de 5: {} Quantidades Notas de 2: {} Quantidades Notas de 1: {}", valor_reais.0, valor_reais.1, valor_reais.2, 
+println!("Quantidade Notas de 100: {}\nQuantidades Notas de 50: {}\n Quantidades Notas de 20: {}\n Quantidades Notas de 10: {}\n
+Quantidades Notas de 5: {}\n Quantidades Notas de 2: {}\n Quantidades Notas de 1: {}", valor_reais.0, valor_reais.1, valor_reais.2, 
 valor_reais.3, valor_reais.4, valor_reais.5, valor_reais.6);
 }
 
