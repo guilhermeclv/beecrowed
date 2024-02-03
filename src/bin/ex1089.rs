@@ -12,25 +12,21 @@ fn ex1089(music_data:[i32;5])->i32{
 
     println!("first:{}, last:{}",first_value,last_value);
     for index in 0..music_data.len() {
-        if(index==0){
+        if index==0 {
             //use last value
-            if(is_extreme_value(last_value,music_data[index],music_data[index+1])){
+            if is_extreme_value(last_value,music_data[index],music_data[index+1]){
                 qt_extreme_values+=1;
             }
         }
-        else if(index==(music_data.len()-1)){
+        else if index==(music_data.len()-1) {
             //use first value
-            if(is_extreme_value(music_data[index-1],music_data[index],first_value)){
+            if is_extreme_value(music_data[index-1],music_data[index],first_value) {
                 qt_extreme_values+=1;
             }
         }
         else{
             //normal operation
-            let sum_before = (music_data[index-1]-music_data[index]);
-            let sum_after = (music_data[index+1]-music_data[index]);
-            if(sum_before>=0 && sum_after>=0) || (sum_before<=0 && sum_after<=0){
-                
-                //qt_extreme_values=1+qt_extreme_values;
+            if is_extreme_value(music_data[index-1],music_data[index],music_data[index+1]) {
                 qt_extreme_values+=1;
             }
         }
