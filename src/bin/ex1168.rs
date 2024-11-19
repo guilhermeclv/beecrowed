@@ -1,4 +1,4 @@
-use std::io;
+use std::{char, io};
 
 fn main() {
     let numero_primario=entrada_dinamica();
@@ -25,28 +25,30 @@ fn entrada_dinamica()-> Vec<String> {
     entradas
 }
 
-fn calcular_leds(numero_primario: &str)-> i32 {
+fn calcular_leds(numero_primario: &str)-> u32 {
     let mut numero_de_leds=0;
 
-   for i in numero_primario.to_string().chars() {
-   let contador = match i.to_digit(10).unwrap() {
-        0 => 6,
-        1 => 2,
-        2 => 5,
-        3 => 5,
-        4 => 4,
-        5 => 5,
-        6 => 6,
-        7 => 3,
-        8 => 7,
-        9 => 6,
-        _=> 0,
-    };
-    numero_de_leds =numero_de_leds + contador;
-        }
+   for letra in numero_primario.to_string().chars() {
+    
+        numero_de_leds = numero_de_leds + leds_por_letra(&letra);
+    }
     numero_de_leds
 }
-
+fn leds_por_letra(letra:&char)->u32 {
+    match letra {
+        '0' => 6,
+        '1' => 2,
+        '2' => 5,
+        '3' => 5,
+        '4' => 4,
+        '5' => 5,
+        '6' => 6,
+        '7' => 3,
+        '8' => 7,
+        '9' => 6,
+        _=> 0,
+    }
+}
 #[test]
 fn testa_calcular_leds() {
     assert_eq!(calcular_leds("115380"), 27);
