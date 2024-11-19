@@ -15,6 +15,7 @@ fn entrada_dinamica()-> Vec<(String, u32)> {
     let numero_inteiro=entrada_1.trim().parse::<i32>().unwrap();
     let mut entradas: Vec<(String, u32)> = Vec::new();
     for i in 0..numero_inteiro {
+<<<<<<< HEAD
         let mut entrada_2=String::new();
         let mut entrada_3=String::new();
         entrada_padrao.read_line(&mut entrada_2).ok();
@@ -22,6 +23,15 @@ fn entrada_dinamica()-> Vec<(String, u32)> {
         let string=entrada_2.trim().to_string();
         let variacao=entrada_3.trim().parse::<u32>().unwrap();
         entradas.push((string, variacao));
+=======
+    let mut entrada_2=String::new();
+    let mut entrada_3=String::new();
+    entrada_padrao.read_line(&mut entrada_2).ok();
+    entrada_padrao.read_line(&mut entrada_3).ok();
+    let string=entrada_2.trim().to_string();
+    let variacao=entrada_3.trim().parse::<i32>().unwrap();
+    entradas.push((string, variacao.try_into().unwrap()));
+>>>>>>> 96a685497b2d8b6384478c94351205ff0b12f5aa
     }
     entradas
 }
@@ -33,12 +43,21 @@ fn decodificar_cifra_de_cesar(string:String, variacao:u32)-> String {
         let posicao_original = n as u8;
         let mut nova_posicao = posicao_original;
        
+<<<<<<< HEAD
         if posicao_original >= ('A' as u8) && posicao_original <= ('Z' as u8) {
             nova_posicao = posicao_original - variacao as u8;
 
             if nova_posicao < ('A' as u8)  {
                 nova_posicao = nova_posicao +26;
             }
+=======
+        if posicao_original >= 65 && posicao_original <=90 {
+        nova_posicao = posicao_original - variacao as u8;
+
+        if nova_posicao < 65 {
+            nova_posicao = nova_posicao +26;
+           }
+>>>>>>> 96a685497b2d8b6384478c94351205ff0b12f5aa
        }
         
         texto_decodificado.push(nova_posicao as char);
