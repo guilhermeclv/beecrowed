@@ -10,7 +10,7 @@ fn entrada_simples()-> i32 {
     let entrada_padrao=io::stdin();
     let mut numero_str=String::new();
     entrada_padrao.read_line(&mut numero_str).ok();
-    let numero = numero_str.trim().parse::<i32>().unwrap();
+    let numero = numero_str.trim().parse::<i32>().unwrap_or(0);
     numero
 }
 

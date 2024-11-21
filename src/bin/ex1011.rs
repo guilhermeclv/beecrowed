@@ -25,4 +25,6 @@ fn testa_calcular_volume_da_esfera() {
     assert_eq!(calcular_volume_da_esfera(3.0), 113.09723999999999);
     assert_eq!(calcular_volume_da_esfera(15.0), 14137.154999999999);
     assert_eq!(calcular_volume_da_esfera(1523.0), 14797486501.627373);
+    assert!(calcular_volume_da_esfera(1523.0) <= (14797486501.62 + 0.01) || calcular_volume_da_esfera(1523.0) >= (14797486501.62-0.01));
+    assert!((calcular_volume_da_esfera(1523.0) - 14797486501.62).abs()<= 0.01);
 }
